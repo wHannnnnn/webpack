@@ -1,0 +1,107 @@
+.leaflet-bottom.leaflet-center {
+    width: 100%;
+    text-align: center;
+    z-index: 1111;
+}
+.leaflet-control-layerOpacity {
+    margin: 0 auto;
+    float: none;
+    width: 305px;
+    height: 26px;
+    border: 1px solid #0ff;
+    background: url(images/bg-normal.png);
+    color:#fff;
+}
+.leaflet-control-layerOpacity .title-label {
+    float: left;
+    width: 60px;
+    text-align: right;
+    height: 26px;
+    line-height: 26px;
+}
+.leaflet-control-layerOpacity .numMax-label {
+    float: left;
+    line-height: 26px;
+    font-weight: bold;
+    font-size: 14px;
+    display: none;
+}
+.leaflet-control-layerOpacity .dragger-container {
+    float: left;
+    width: 230px;
+    height: 6px;
+    margin: 10px 0 0 0px;
+    display: inline;
+    position: relative;
+    background: #FFF;
+}
+.leaflet-control-layerOpacity .options-wrap {
+    position: absolute;
+    right: -27px;
+    top: -1px;
+    height: 26px;
+    border: 1px solid #0ff;
+    background: url(images/bg-normal.png);
+    overflow: hidden;
+}
+.leaflet-control-layerOpacity .opacity-num {
+    position: absolute;
+    height: 35px;
+    width: 55px;
+    left: 0px;
+    top: -40px;
+    background: url(images/control-olayer-opacity-pop.png) no-repeat;
+    text-align: center;
+    line-height: 26px;
+    margin-left: -13px;
+    font-size: 14px;
+    color:#000;
+    display:none;
+}
+.leaflet-control-layerOpacity:hover .opacity-num {
+    display:block;
+}
+
+.leaflet-control-layerOpacity .dragger {
+    position: absolute;
+    height: 16px;
+    width: 32px;
+    cursor: pointer;
+    left: 0px;
+    top: -5px;
+    background: #00b7ef url(images/icon-drage.png) no-repeat center center;
+}
+.leaflet-control-layerOpacity .dragger-bg {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    font-size: 0px;
+    display: none;
+}
+.leaflet-control-layerOpacity .close_abtn {
+    float: left;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    overflow: hidden;
+    text-indent: -999999px;
+    background: url(images/icon-close-w.png) no-repeat center center;
+}
+.leaflet-control-layerOpacity .fav_abtn {
+    float: left;
+    width: 26px;
+    height: 26px;
+    margin-right: 1px;
+    cursor: pointer;
+    overflow: hidden;
+    text-indent: -999999px;
+    background: url(images/icon-fav-w.png) no-repeat center center;
+}
+.leaflet-control-layerOpacity .numMin-label {
+    float: left;
+    line-height: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    display: none;
+}

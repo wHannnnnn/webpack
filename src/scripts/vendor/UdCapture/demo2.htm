@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>优道在线屏幕截图控件演示 — 文件方式上传</title>
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+        label{font-size:12px;}
+        h3{float:right;margin:4px 30px;line-height:40px;}
+        a{color:#3079ED}
+        a:hover{color:red}
+        #logInfo{background-color:#eee;border:1px solid #999;height:30px;line-height:30px;font-size:12px;padding:2px 20px;}
+        #snapImg{border:1px solid #666;margin-top:10px;height:650px;overflow:auto; text-align:center;}
+        #btnCapture{border:1px solid #3079ED;background-color:#498AF4;color:#ffffff;line-height:40px;font-weight:bold; text-decoration:none; text-align:center;padding:5px 20px;}
+        #btnCapture:hover{background-color:#3B80EE}
+    </style>
+    <script type="text/javascript" src="UdCapture/UdCapture.js?2.0.1"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            //其中"btnCapture"为截图按钮的ID
+            var udCapture = new UdCapture("btnCapture", {
+                OnClick: function () {
+                    udCapture.AutoMinimize = document.getElementById("autoMin").checked;
+                    if (document.getElementById("captureScreen").checked)
+                        udCapture.CaptureScreen();
+                    else
+                        udCapture.StartCapture();
+                },
+                OnStartSetup: function (setupFile) {
+                    f_log("正在进行安装，安装完成后请<a href=''>刷新当前页面</a>！");
+                },
+                OnBeforeCapture: function () {
+                    f_log("开始截图");
+                },
+                OnCaptureCanceled: function () {
+                    f_log("已取消截图");
+                },
+                OnCaptureCompleted: function (file, imgData) {
+                    f_log("<img src=\"icons/Loading.gif\" style=\"vertical-align:text-bottom\" />&nbsp;正在上传截图...");
+                    //调用控件的上传方法完成上传,请求的文件可以根据需要换为其它语言
+                    udCapture.Upload("ashx/SaveImage.ashx");
+                },
+                OnUploadFailed: function () {
+                    f_log("图片上传失败");
+                },
+                OnUploadCompleted: function (responseText) {
+                    f_log("图片上传完成.");
+                    var json = eval("(" + responseText + ")"); //因为返回文本所以要转换json格式，随机数防止缓存
+                    document.getElementById("snapImg").innerHTML = "<img src=\"" + json.filepath + "?" + Math.random() + "\">"
+                }
+
+            });
+        }
+        //显示事件消息
+        function f_log(str) {
+            document.getElementById("logInfo").innerHTML = str;
+        }
+
+    </script>
+</head>
+<body>
+    <div id="ctlDiv">
+        <a id="btnCapture" href="javascript:;">屏幕截图</a>             
+        <input type="checkbox" id="autoMin" value="1" /><label for="autoMin">自动最小化当前窗口</label>
+        <input type="checkbox" id="captureScreen" value="1" /><label for="captureScreen">直接捕捉当前屏幕</label>
+        <h3><img alt="" src="icons/UdCapture.gif" style="vertical-align:baseline" />&nbsp;优道在线屏幕截图控件演示2</h3>
+        <div id="logInfo">请点击上面的按钮开始进行屏幕截图</div>
+    </div>
+    <div id="snapImg"></div>
+</body>
+</html>

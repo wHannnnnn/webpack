@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="./images/logo.png">
+        </div>
+        <div id="header_right" class="">
+            <div class="title">
+                <div class="title_top">
+                    <p>中国某某某某XXXXXXXXXXXXX</p>
+                    <p style="font-size: 12px">某某某某XXXXXXXXXXXXX</p>
+                </div>
+            </div>
+            <div class="center-logo" id="logo">
+                <img src="./images/logo-center.png" alt="">
+            </div>
+            <div class="header_time">
+                <div class="header_time_con">
+                    <div class="time_top">2020-10-10</div>
+                    <div class="time_bottom">15:22:35</div>
+                </div>
+            </div>
+            <div class="header_user">
+                <a href="javascript:;"><img src="./images/logo.png" class="layui-nav-img">Han@163.com</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:;">修改信息</a></dd>
+                    <dd><a href="javascript:;">安全管理</a></dd>
+                    <dd><a href="javascript:;">退了</a></dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="leftNav">
+        <div class="layui-tab layui-tab-card">
+            <ul class="layui-tab-title left-nav">
+                <li class="layui-this"><i class="layui-icon layui-icon-home"></i></li>
+                <li><i class="layui-icon layui-icon-app"></i></li>
+                <li><i class="layui-icon layui-icon-read"></i></li>
+                <li><i class="layui-icon layui-icon-friends"></i></li>
+                <li><i class="layui-icon layui-icon-app"></i></li>
+                <li><i class="layui-icon layui-icon-read"></i></li>
+                <li><i class="layui-icon layui-icon-friends"></i></li>
+            </ul>
+            <div class="layui-tab-content left-nav">
+                <div class="layui-tab-item first layui-show">
+                    <form class="layui-form" action="" lay-filter="example">
+                        <div class="layui-form-item">
+                            <div class="home_con">
+                                <div class="input_search">
+                                    <input type="text" name="title" id="searchText" required placeholder="请输入"
+                                        autocomplete="off" class="layui-input">
+                                    <!-- <button type="button" class="layui-btn layui-btn-normal" id="LAY-component-form-getval">取值</button> -->
+                                </div>
+                                <div class="input_selet">
+                                    <select name="city" lay-filter="more" lay-verify="">
+                                        <option value="">模糊</option>
+                                        <option value="010">北京</option>
+                                        <option value="021">上海</option>
+                                        <option value="0571">杭州</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="main">
+                        <div class="setting">
+                            <i class="layui-icon layui-icon-refresh"></i>
+                            <i class="layui-icon layui-icon-add-1"></i>
+                            <i class="layui-icon layui-icon-util"></i>
+                            <i class="layui-icon layui-icon-set-fill"></i>
+                        </div>
+                        <div class="detail">
+                            <form class="layui-form" action="">
+                                <div class="layui-form-item">
+                                    <div class="layui-unselect layui-form-select">
+                                        <div class="layui-select-title changeArea">
+                                            <input type="text" placeholder="详细" value="" readonly=""
+                                                class="layui-input layui-unselect">
+                                            <i class="layui-edge"></i>
+                                        </div>
+                                    </div>
+                                    <div class="detail-list">
+
+                                        <script id="changeList" type="text/html">
+                                            <div class="layui-tab layui-tab-brief change_tab" lay-filter="changeList" lay-allowclose="true">
+                                                <ul class="layui-tab-title">
+                                                {{#  layui.each(d, function(index, item){ }}
+                                                    {{#  if(index == 0){ }}
+                                                        <li class="layui-this" data-status='{{item.id}}'>
+                                                            <span>{{ item.value }}</span>
+                                                        </li>
+                                                        {{#  } else { }}
+                                                        <li data-status="{{item.id}}">
+                                                            <span>{{ item.value }}</span>
+                                                        </li>
+                                                    {{#  } }} 
+                                                {{#  }); }}
+                                                </ul>
+                                            </div>
+                                        </script>
+
+                                        <script id="categoryList" type="text/html">
+                                            <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+
+                                                <ul class="layui-tab-title">
+                                                    {{#  layui.each(d, function(index, item){ }}
+                                                        {{#  if(index == 0){ }}
+                                                            <li class="layui-this" data-status='{{item.id}}'>
+                                                                <span>{{ item.title }}</span>
+                                                            </li>
+                                                            {{#  } else { }}
+                                                            <li data-status="{{item.id}}">
+                                                                <span>{{ item.title }}</span>
+                                                            </li>
+                                                        {{#  } }} 
+                                                    {{#  }); }}
+                                                </ul>
+                                                
+                                                <div class="layui-tab-content">
+                                                    <div class="layui-tab-item layui-show">
+                                                        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                                                            <ul class="layui-tab-title">
+                                                                {{#  layui.each(d[0].area, function(index, item){ }}
+                                                                    {{#  if(index == 0){ }}
+                                                                        <li class="layui-this" data-status='{{item.id}}'>
+                                                                            <span>{{ item.title }}</span>
+                                                                        </li>
+                                                                        {{#  } else { }}
+                                                                        <li data-status="{{item.id}}">
+                                                                            <span>{{ item.title }}</span>
+                                                                        </li>
+                                                                    {{#  } }} 
+                                                                {{#  }); }}
+                                                            </ul>
+                                                            <div class="layui-tab-content">
+                                                                {{#  layui.each(d[0].area, function(index, item){ }}
+                                                                    {{#  if(index == 0){ }}
+                                                                        <div class="layui-tab-item layui-show">
+                                                                            <div class="all_country">
+                                                                                {{#   layui.each(item.country, function(index, items){ }}
+                                                                                    <div class="country">{{items.value}}</div>
+                                                                                {{#  }); }}
+                                                                            </div>
+                                                                        </div>
+                                                                    {{#  } else { }}
+                                                                        <div class="layui-tab-item">
+                                                                            <div class="all_country">
+                                                                                {{#   layui.each(item.country, function(index, items){ }}
+                                                                                    <div class="country">{{items.value}}</div>
+                                                                                {{#  }); }}
+                                                                            </div>
+                                                                        </div>
+                                                                    {{#  } }} 
+                                                                {{#  }); }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="layui-tab-item">
+                                                        <div class="all_category">
+                                                            <div class="category">军用机场</div>
+                                                            <div class="category">大电厂</div>
+                                                            <div class="category">发电厂</div>
+                                                            <div class="category">炼油厂</div>
+                                                            <div class="category">行政机关</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="layui-tab-item">
+                                                        <div class="all_level">
+                                                            <div class="level"><i class="layui-icon layui-icon-set"></i>可靠
+                                                            </div>
+                                                            <div class="level"><i class="layui-icon layui-icon-set"></i>可用
+                                                            </div>
+                                                            <div class="level"><i class="layui-icon layui-icon-set"></i>参考
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="layui-tab-item">
+                                                        <div class="layui-collapse all_screen" lay-filter="test">
+                                                            <div class="layui-colla-item">
+                                                                <h2 class="layui-colla-title">所属目标体系</h2>
+                                                                <div class="layui-colla-content">
+                                                                    <p>a</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="layui-colla-item">
+                                                                <h2 class="layui-colla-title">目标等级</h2>
+                                                                <div class="layui-colla-content">
+                                                                    <p>a</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="layui-colla-item">
+                                                                <h2 class="layui-colla-title">驻地</h2>
+                                                                <div class="layui-colla-content">
+                                                                    <p>a</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="layui-colla-item">
+                                                                <h2 class="layui-colla-title">是否完整成果</h2>
+                                                                <div class="layui-colla-content">
+                                                                    <p>a</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </script>
+                                        <div id="changeView"></div>
+                                        <div id="categoryView"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="list_con">
+                            <blockquote class="layui-elem-quote">
+                                <div class="address"><span class="area_value">大兴区</span><span>(2)</span></div>
+                                <div class="address"><span class="area_value">昌平区</span><span>(2)</span></div>
+                                <div class="address"><span class="area_value">大兴区</span><span>(2)</span></div>
+                                <div class="address"><span class="area_value">大兴区</span><span>(2)</span></div>
+                                <div class="address"><span class="area_value">大兴区</span><span>(2)</span></div>
+                                <div class="address"><span class="area_value">大兴区</span><span>(2)</span></div>
+                                <div class="address"><span class="area_value">大兴区</span><span>(2)</span></div>
+                                <div class="address"><span class="area_value">大兴区</span><span>(2)</span></div>
+                                <div class="address"><span class="area_value">大兴区</span><span>(2)</span></div>
+                                <div class="address"><span class="area_value">大兴区</span><span>(2)</span></div>
+                                <div class="address"><span class="area_value">大兴区</span><span>(2)</span></div>
+                                <div class="address"><span class="area_value">大兴区</span><span>(2)</span></div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="address addresshide"><span class="area_value">大兴区</span><span>(2)</span>
+                                </div>
+                                <div class="clickMore">
+                                    <div><span class="more">展开更多</span> <i class="layui-icon layui-icon-down"></i>
+                                    </div>
+                                </div>
+                            </blockquote>
+                            <div class="list_con_con">
+                                <div class="layui-card">
+                                    <div class="layui-card-body">
+                                        <div class="card-body-cen">
+                                            <div class="left_img">
+                                                <img src="./images/logo.png" alt="">
+                                            </div>
+                                            <div class="right_con">
+                                                <div class="right_title">
+                                                    卡片式面板面板通常用于非白色背景色的主体内
+                                                    从而映衬出边框投影
+                                                </div>
+                                                <div class="right_profile">
+                                                    <span>日本</span>
+                                                    <span>水力发电设施</span>
+                                                    <span>2级</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-tab-item second">2</div>
+                <div class="layui-tab-item">3</div>
+                <div class="layui-tab-item">4</div>
+                <div class="layui-tab-item">4</div>
+                <div class="layui-tab-item">4</div>
+                <div class="layui-tab-item">4</div>
+                <div id="right"></div>
+                <div class="close">
+                    <img src="./images/close.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

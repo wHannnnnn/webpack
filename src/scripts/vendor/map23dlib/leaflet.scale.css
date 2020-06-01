@@ -1,0 +1,34 @@
+/*S leaflet-control-scale*/
+.leaflet-bottom .leaflet-control-scale {
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+.leaflet-control-scale-line {
+    border: 3px solid #fff;
+    border-top: none !important;
+    border-bottom: 3px solid #fff !important;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    color: #fff;
+    line-height: 1.1;
+    padding: 2px 5px 1px;
+    font-size: 11px;
+    white-space: nowrap;
+    height: 2px;
+    position: relative;
+    overflow: visible;
+    background: none;
+    float: left;
+    margin-top: 18px !important;
+}
+
+
+.leaflet-control-scale-line span {
+    position: absolute;
+    top: -10px;
+    left: 5px;
+    display: block;
+    line-height: 1.2;
+}
+/*E leaflet-control-scale*/

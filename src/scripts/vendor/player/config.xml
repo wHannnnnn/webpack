@@ -1,0 +1,76 @@
+﻿<!-- 
+ 	***此文件必须以UTF-8的编码保存**
+	
+	AutoPlay	: 	是否自动播放。
+	Repeat		: 	是否重复播放。
+	Rand    	: 	是否随机播放。
+	Ctn     	: 	是否连续播放。
+
+	PreLoad		:	是否采用预下载模式。
+	
+	FileUrl		: 	列表或媒体地址的前缀。
+	file		: 	列表或媒体地址，与FileUrl配合使用可以简单隐藏媒体的地址，真实的地址是FileUrl+file。
+
+	DefaultVol 	: 	默认音量。
+
+	SkinURL		: 	皮肤包路径。
+	SkinXml		:	皮肤模版。必须以UTF-8的编码保存文件。
+	LangXml		:	语言包，可以修改为其他的语言显示输出信息。必须以UTF-8的编码保存文件。
+	
+	LinkNum		: 	尝试连接媒体的次数。
+	LinkTimeOut	:	连接媒体的超时时间，单位秒，默认15秒。
+	
+	JSenable 	: 	是否允许JavaScript控制。
+
+	Decoders	:	额外的媒体解码器。由于flash所支持的媒体类型有限，必须安装额外的解码器才能播放，多解码器用"|"分隔，解码器保存在decoder目录下。
+
+	Plugin   	: 	是否加载插件。
+	Plugins		: 	加载的插件属性集合。多插件用"|"分隔。
+
+	Smoothing	:	是否平滑处理视频。平滑处理会使视频变得细腻，但会消耗CPU的资源。
+
+	ImgDuration	: 	播放图片的时间长度，单位毫秒。
+	CustomID 	: 	客户设别码。用来识别一些特定的插件、皮肤、解码器是否拥有使用权限。
+	BufferTime	: 	媒体的缓冲时间长度。单位秒。
+	FormatLrcUrl	: 	是否格式化歌词字幕的链接地址。
+	FormatXmlUrl	: 	是否格式化列表文件的链接地址。
+	UseCodePage	: 	是否采用客户端页面相同的编码解析文本。如果LRC歌词显示为乱码，请将此设置为true。
+-->
+<config
+
+	AutoPlay	= 	"true"
+	Repeat		= 	"false"
+	Rand    	= 	"false"
+	Ctn     	= 	"false"
+	
+	PreLoad		=	"false"
+	
+	FileUrl		= 	""
+	file		= 	""
+
+	DefaultVol 	= 	"50"
+
+	SkinURL		= 	"skin/default.zip"
+	SkinXml		=	"skin.xml"
+	LangXml		=	"lang.xml"
+	
+	LinkNum		= 	"1"
+	LinkTimeOut	=	"15"
+	
+	JSenable 	= 	"false"
+
+	Decoders	=	"wmp.swf|youku.swf"
+
+	Plugin   	= 	"false"
+	Plugins		= 	"prt:body;align:0;valign:0;w:100%;h:100%;src:Revolt.swf"
+
+	Smoothing	=	"true"
+
+	ImgDuration	= 	"5000"
+	CustomID 	= 	""
+	BufferTime	= 	"3"
+	FormatLrcUrl	= 	"false"
+	FormatXmlUrl	= 	"true"
+	UseCodePage	= 	"false"
+
+/>

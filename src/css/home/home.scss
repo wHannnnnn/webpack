@@ -1,0 +1,402 @@
+@import 'default';
+.header {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    #header_right {
+        display: flex;
+        flex: 1;
+        background: url('../../images/bj.png');
+        background-color: #3D454B
+    }
+    .logo {
+        width: 80px;
+        height: 72px;
+        border-right: 2px solid #313538;
+        border-bottom: 2px solid #313538;
+        position: relative;
+        background: url('../../images/bj.png');
+        background-color: #3D454B;
+        box-sizing: border-box;
+        margin-right: -1px;
+        margin-left: -1px;
+        z-index: 999;
+        img {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+    .title {
+        display: flex;
+        align-items: center;
+        .title_top {
+            font-size: 20px;
+            padding: 0 20px
+        }
+        .time_top {
+            font-size: 20px
+        }
+    }
+    .center-logo {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 72px;
+        img {
+            height: 100%
+        }
+    }
+    .header_time {
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        border-right: 2px solid #313538
+    }
+    .header_user {
+        font-size: 18px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+    }
+}
+.leftNav {
+    height: calc(100vh);
+    .close {
+        position: absolute;
+        right: -28px;
+        top: 50%;
+        transform: translate(0%, -50%);
+        visibility: visible;
+    }
+    #right {
+        width: 6px;
+        cursor: e-resize;
+        position: absolute;
+        right: 0;
+        height: 100%;
+        top: 0;
+        z-index: 9999999999999999;
+    }
+    .layui-tab-title.left-nav{
+        height: auto;
+        display: inline-block;
+        border: none;
+        background-color: transparent;
+        background: url('../../images/bj.png');
+        background-color: #3D454B;
+        padding-top: 72px;
+        z-index: 9;
+        li {
+            display: block;
+            background: #3e464c;
+            box-shadow: 2px -4px 15px #1f1f1f;
+            padding: 0;
+            width: 80px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2px;
+            .layui-icon {
+                font-size: 36px
+            }
+        }
+    }
+    .layui-tab {
+        margin: 0
+    }
+    .change_tab {
+        color: #fff;
+        padding: 10px 0;
+    }
+    .layui-tab-card {
+        box-shadow: none;
+        border: none;
+        display: flex;
+        height: 100%
+    }
+    .layui-tab-content {
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+        .layui-tab-brief>.layui-tab-title .layui-this {
+            color: #fff;
+            &:after {
+                border-bottom: 1px solid #0066ff;
+                top: 4px;
+            }
+        }
+        .layui-tab-title {
+            border-color: #a9adb4;
+            line-height: 44px;
+            height: 44px;
+            li {
+                padding: 4px 12px;
+                font-size: 20px;
+                color: #b9b9b9;
+            }
+        }
+        .all_country {
+            display: flex;
+            padding: 10px 20px;
+            flex-wrap: wrap;
+            .country {
+                padding: 6px;
+                margin-right: 24px;
+                width: 90px;
+                text-align: center;
+                margin-bottom: 4px;
+                &:nth-child(4n) {
+                    margin-right: 0;
+                }
+                &:hover {
+                    background: #0066ff;
+                    cursor: pointer;
+                }
+            }
+        }
+        .all_category {
+            @extend .all_country;
+            .category {
+                @extend .country;
+                width: 140px;
+                &:nth-child(3n) {
+                    margin-right: 0;
+                }
+            }
+        }
+        .all_level {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            .level {
+                padding: 4px 10px;
+                .layui-icon {
+                    margin-right: 16px;
+                    font-size: 20px;
+                }
+                &:hover {
+                    background: #0066ff;
+                    cursor: pointer;
+                }
+            }
+        }
+        .all_screen {
+            border: none;
+            .layui-colla-title {
+                background-color: transparent;
+                color: #d2d2d2;
+                font-size: 20px;
+            }
+            .layui-colla-item {
+                border-color: transparent;
+            }
+            .layui-colla-content {
+                border: none;
+            }
+            .layui-colla-icon {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+    .layui-tab-card>.layui-tab-title .layui-this {
+        background: url('../../images/bj.png');
+        background-color: #2F363b;
+        box-sizing: border-box;
+        // color: #8f8eff;
+        // background: linear-gradient(to right, #24bbff, #0066ff);
+        // -webkit-background-clip: text;
+        // color: transparent;
+        color: #0066ff;
+        box-shadow: inset 0px 0px 24px #24272c;
+        /* border-left:4px solid;
+        border-image: -webkit-linear-gradient(red,yellow) 30 30;
+        border-image: -moz-linear-gradient(red,yellow) 30 30;
+        border-image: linear-gradient(red,yellow) 30 30;  */
+    }
+    .layui-tab-card>.layui-tab-title .layui-this:after{
+        border: none;
+    }
+    .layui-tab-content.left-nav {
+        width: 660px;
+        min-width: 660px;
+        max-width: 80%;
+        background: url('../../images/bj.png');
+        background-color: #2F363b;
+        padding: 20px;
+        box-sizing: border-box;
+        padding-top: 72px;
+        position: relative;
+    }
+    .layui-input{
+        background-color: #44494d;
+        border: none;
+        box-shadow: inset 0px 2px 10px #1c1c1c;
+        caret-color:#fff;
+        color: #dfdfdf
+    }
+    .list {
+        padding: 0 30px;
+        display: none;
+        .list_con {
+            background: rgba(159, 159, 159, 0.22);
+            min-width: 566px;
+            padding: 16px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 254px);
+            .layui-elem-quote {
+                background: rgba(24, 24, 24, 0.51);
+                display: flex;
+                flex-wrap: wrap;
+                font-size: 20px;
+                .address {
+                    padding: 4px 20px
+                }
+                .addresshide {
+                    display: none
+                }
+                .clickMore {
+                    width: 100%;
+                    text-align: right;
+                    padding: 10px 24px 0 10px;
+                    color: #24bbff
+                }
+            }
+            .list_con_con {
+                font-size: 20px;
+                // max-height: calc(100vh - 460px);
+                scrollbar-arrow-color: #169cde; /**//*三角箭头的颜色*/ 
+                scrollbar-face-color: #169cde; /**//*立体滚动条的颜色*/ 
+                scrollbar-3dlight-color: #666; /**//*立体滚动条亮边的颜色*/ 
+                scrollbar-highlight-color: #666; /**//*滚动条空白部分的颜色*/ 
+                scrollbar-shadow-color: #999; /**//*立体滚动条阴影的颜色*/ 
+                scrollbar-darkshadow-color: #666; /**//*立体滚动条强阴影的颜色*/ 
+                scrollbar-track-color: #666; /**//*立体滚动条背景颜色*/ 
+                scrollbar-base-color:#f8f8f8; /**//*滚动条的基本颜色*/ 
+                overflow: auto;
+                .layui-card {
+                    background-color: transparent;
+                }
+                .layui-card-body {
+                    padding: 4px 15px;
+                    .card-body-cen {
+                        display: flex;
+                        border-bottom: 1px solid #eeeeee59;
+                        padding: 20px 0;
+                        img {
+                            width: 100px;
+                        }
+                        .right_con {
+                            padding: 0 50px 0 10px;
+                        }
+                        .right_title {
+                            padding: 4px 10px;
+                            color: #fff;
+                            height: 50px;
+                        } 
+                        .right_profile {
+                            display: flex;
+                            justify-content: space-between;
+                            padding: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.home_con {
+    display: flex;
+    padding: 20px 30px;
+    .input_search {
+        flex: 1;
+        .layui-input{
+            margin-right: 20px;
+            height: 58px;
+            font-size: 24px;
+            border-radius: 24px;
+            padding: 0 30px
+        }
+    }
+    .input_selet {
+        width: 100px;
+        .layui-input{
+            height: 58px;
+            font-size: 24px;
+        }
+    }
+    .layui-form-item {
+        margin-bottom: 0
+    }
+}
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    margin-bottom: 16px;
+    position: relative;
+    .setting .layui-icon{
+        font-size: 24px;
+        padding: 0 4px;
+    }
+    .detail {
+       .layui-input {
+           width: 80px;
+           border-radius: 15px;
+       } 
+       .layui-form-selected dl {
+           display: none;
+       }
+    }
+    .detail-list {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        width: 566px;
+        top: 50px;
+        right: 24px;
+        width: 566px;
+        background: rgba(3, 3, 3, 0.9);
+        display: none;
+        font-size: 20px;
+        z-index: 99;
+        .layui-card {
+            background: transparent;
+            .card-body-cen {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 10px;
+                border-bottom: 1px dashed #eeeeee59;
+                .city {
+                    padding: 0 10px;
+                }
+            }
+        }
+        .popper__arrow {
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid;
+            border-width: 6px;
+            filter: drop-shadow(0 2px 12px rgba(0,0,0,.03));
+            top: -6px;
+            right: 36px;
+            margin-right: 3px;
+            border-top-width: 0;
+            border-bottom-color: #020202;
+        }
+    }
+}

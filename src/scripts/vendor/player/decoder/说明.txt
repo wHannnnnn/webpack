@@ -1,0 +1,42 @@
+    *******************************
+		解码器说明
+    *******************************
+
+        
+    名称   	:    wmp.swf
+    作者   	:    Peter(卖男孩的小火柴)
+    QQ     	:    41715399
+    E-mail 	:    mail@snbase.cn
+    website	:    http://www.snbase.cn/
+    版权   	:    版权所有
+    说明   	:    实现windows media player 媒体格式的音频解码，不能解析其视频，也不支持FF浏览器、QQ空间。
+    支持格式	:    wma、wav、mid、rmi、midi、asf、wmv、wmd、avi、snd、au、aif、aifc、aiff、mpeg、mpg、vob。
+    备注	:    如果列表文件内媒体的url属性扩展名能够准确的表达媒体的格式，则无需设置type属性，否则必须设置type属性。
+    举例	:    
+		<m title="【WMA】凤凰传奇-郎的诱惑" url="http://www.yourwebsite.com/凤凰传奇-郎的诱惑.wma" img="" />
+		没有设置媒体的type属性，因为url属性的扩展名能够准确的表达其文件格式。
+
+		<m title="【网络电台】青檬网络音乐台" type="wma" url="rtsp://pub1.qmoon.net/911pop" img="" />
+		由于从url属性中无法设别文件格式，所以设置type属性将url抛给wmp.swf去解析。
+
+
+
+    名称   	:    youku.swf
+    作者   	:    Peter(卖男孩的小火柴)
+    QQ     	:    41715399
+    E-mail 	:    mail@snbase.cn
+    website	:    http://www.snbase.cn/
+    版权   	:    版权所有
+    说明   	:    实现优酷视频真实地址的实时解析，由于是实时解析，从而不会象用其他方法获得的地址那样会失效。
+    支持格式	:    youku，媒体的type属性必须设置为"youku"，否则会将其当成普通的swf文件播放。
+    备注	:    由于基于优酷的算法编写，如果优酷改变算法，则不能保证其长期有效。
+		     优酷同一个视频可能会存在高清晰的mp4版本和低清晰的flv版本，本解码器会优先选择高清晰的mp4版本。
+		     优酷将一个视频分割成若干片段，本解码器将其合并成一个视频，但当切换片段时会感觉到明显的黑屏间隙。
+		     不支持优酷的加密视频。
+    举例	:    
+		<m title="【优酷】全城热恋" type="youku" url="http://player.youku.com/player.php/sid/XMTU5MDI3NDA0/v.swf" img="" />
+		<m title="【优酷】新年快乐" type="youku" url="http://player.youku.com/player.php/sid/XMTE0MDk4MA==/v.swf" img="" />
+		<m title="【优酷】阿凡达预告片" type="youku" url="http://player.youku.com/player.php/sid/XMTI4ODI0MjI4/v.swf" img="" />
+		<m title="【优酷】杜拉拉升职记" type="youku" url="http://player.youku.com/player.php/sid/XMTcyOTM5MzQw/v.swf" img="" />
+		媒体属性url为优酷对外分享的flash地址，这个地址永远都不会变化的。属性type必须设置为"youku"，否则会将其当成普通的swf文件播放。
+
